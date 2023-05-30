@@ -14,8 +14,6 @@ public class Generics {
 
             System.out.println(p.name);
         }
-
-
     }
 }
 
@@ -28,6 +26,7 @@ class Player{
         this.age = age;
     }
 }
+
 class Foward extends Player{
     int skillpoint;
     int game;
