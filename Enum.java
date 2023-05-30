@@ -10,10 +10,11 @@ enum Arsenalplayer {
     public int getBacknumber() { return backnumber; }
     public String getNation() { return nation; }
 
-    public static Arsenalplayer of(int bn) {
-        if (bn < 0)
-            throw new IllegalArgumentException("Invalid value : " + bn);
-        return gunners[bn - 34];
+    public static Arsenalplayer of(int x) {
+        if (x < 1 || x > 4)
+            throw new IllegalArgumentException("Invalid value : " + x);
+
+        return gunners[x - 1];
     }
     public String toString() {
         return name() + getNation();
@@ -26,7 +27,7 @@ public class Enum {
             System.out.printf("%s=%d%n", ap.name(), ap.getBacknumber());
 
         Arsenalplayer ap1 = Arsenalplayer.Xhaka;
-        Arsenalplayer ap2 = Arsenalplayer.of(36);
+        Arsenalplayer ap2 = Arsenalplayer.of(2);
 
         System.out.printf("ap1=%s, %d, %s%n", ap1.name(), ap1.getBacknumber(), ap1.getNation());
         System.out.printf("ap2=%s, %d, %s%n", ap2.name(), ap2.getBacknumber(), ap2.getNation());
